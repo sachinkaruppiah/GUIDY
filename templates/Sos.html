@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SOS</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" />
+        <link rel="stylesheet" href="/static/css/sos.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="pic"></div>
+            <div class="pic-2"></div>
+            <span class="text"><a href="{{ url_for('tour') }}">Tours Packages</span
+            ><span class="text-2">Tours Packages</a></span>
+            <div class="wrapper">
+                <span class="text-3">About</span><span class="text-4"> </span
+                ><span class="text-5">us</span>
+            </div>
+            <div class="group">
+                <span class="text-6">About</span><span class="text-7"> </span
+                ><span class="text-8">us</span>
+            </div>
+            <span class="text-9"><a href="{{url_for('hotel')}}"> Hotels</a></span><span class="text-a"><a href="{{url_for ('dashboard')}}"> Home</span
+            ><span class="text-b">Home</a></span><span class="text-c"><a href= "{{url_for('ar')}}">Guide</a></span
+            >a<span class="text-d"><a href="{{url_for('sos')}}">S</a></span><span class="text-e"></span
+            ><span class="text-f"></span>
+            <div class="img"></div>
+            <div class="pic-3"></div>
+            <div class="pic-4"></div>
+            <div class="img-2"></div>
+            <div class="pic-5">
+                <div class="chng">
+               <a href="{{ url_for('make_call')}}"><span class="text-10" button id="SOS button" class="sos-button">SOS</span>
+                <span class="text-11">press 3 seconds</span></a>
+            </div></div>
+            <div class="section"><span class="text-12">Hi Buddy!</span></div>
+            <span class="text-13">Are you in an emergency?</span
+            ><span class="text-14"
+                >Press the SOS button,your current location will be shared with the
+                nearest help centre and your emergency contacts</span
+            ><span class="text-15">Whats your emergency?</span>
+            <div class="pic-6">
+                <div class="box">
+                    <div class="img-3"></div>
+                    <div class="img-4"></div>
+                    <span class="text-16">Medical</span>
+                </div>
+                <div class="wrapper-2">
+                    <div class="pic-7"></div>
+                    <div class="img-5"></div>
+                    <div class="pic-8"></div>
+                    <span class="text-17">Accident</span>
+                </div>
+            </div>
+            <div class="wrapper-3">
+                <div class="pic-9"></div>
+                <div class="pic-a"></div>
+                <span class="text-18">Fire</span>
+            </div>
+            <div class="box-2">
+                <div class="img-6"></div>
+                <div class="img-7"></div>
+                <span class="text-19">Violence</span>
+            </div>
+            <div class="wrapper-4">
+                <div class="pic-b"></div>
+                <div class="img-8"></div>
+                <div class="img-9"><div class="group-2"></div></div>
+                <span class="text-1a">Rescue</span>
+            </div>
+        </div>
+        <script>
+        document.getElementById("sosButton").addEventListener("click", () => {
+            fetch("http://127.0.0.1:5000/sos-call", { // Change port if using Node.js
+                method: "POST",
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message))
+            .catch(error => console.error("Error:", error));
+        });
+        </script>
+    </body>
+</html>

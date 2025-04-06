@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&display=swap"
+    />
+    <link rel="stylesheet" href="/static/css/login.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="pic"></div>
+      <div class="img"></div>
+      <div class="img-2"></div>
+      <div class="pic-2"></div>
+      <div class="img-3"></div>
+      <div class="img-4"></div>
+      <div class="section">
+        <span class="text">“Welcome Back Buddy!”</span>
+      </div>
+      <div class="img-5">
+        <span class="text-2">Log In</span>
+        <div class="img-6"></div>
+
+        <!-- Login Form -->
+        <form method="POST" >
+          <div class="group">
+            <input
+              class="Input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Your Email"
+              required
+            />
+          </div>
+          <div class="group-2">
+            <input
+              class="Input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Your Password"
+              required
+            />
+            <div class="img-7"></div>
+          </div>
+
+          <!-- Display error message if login fails -->
+          {% if error %}
+          <p style="color: red; text-align: center;">{{ error }}</p>
+          {% endif %}
+
+          <button class="Button" type="submit">
+            <span class="text-5">Log In</span>
+          </button>
+        </form>
+
+        <div class="group-3">
+          <span class="text-6">Don’t have an account?</span>
+          <span class="text-8">
+            <a href="{{ url_for('signup') }}">Register</a>
+          </span>
+        </div>
+        <span class="text-9">Or</span>
+      </div>
+      <div class="section-2">
+        <button class="Button-2">
+          <div class="img-8"></div>
+          <div class="section-3">
+            <span class="text-a">Continue with Google</span>
+          </div>
+        </button>
+        <button class="Button-3">
+          <div class="img-9"></div>
+          <div class="box">
+            <span class="text-b">Continue with Facebook</span>
+          </div>
+        </button>
+        <button class="Button-4">
+          <div class="pic-3"></div>
+          <div class="box-2">
+            <span class="text-c">Continue with Apple</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

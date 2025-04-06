@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Package Chatbot</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <!-- Chatbot button -->
+  <div id="chatbot-btn">
+    <button onclick="openChat()">Chat with us</button>
+  </div>
+
+  <!-- Chatbot window -->
+  <div id="chatbot-window" style="display: none;">
+    <div class="chat-header">
+      <span>Tour Bot</span>
+      <button onclick="closeChat()">X</button>
+    </div>
+    <div class="chat-body">
+      <div id="chat-log"></div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-message" placeholder="Ask me anything..." onkeydown="if(event.key === 'Enter'){sendMessage();}">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="/static/css/bot.js"></script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,user-scalabale=no">
+    <title>GUIDY</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lilita+One:wght@400&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patua+One:wght@400&display=swap" />
+    <link rel="stylesheet" href="/static/css/home.css" />
+    <style>
+      .profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.profile-panel {
+  position: fixed;
+  top: 0;
+  right: -300px; /* Initially hidden */
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  transition: right 0.4s ease-in-out;
+  z-index: 1001;
+}
+
+.profile-panel h3 {
+  margin-top: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="flex-row-f">
+        <div class="ellipse"></div>
+        <div class="group"><div class="group-1"></div></div>
+        <button class="ellipse"></button><span class="home">Home</span
+        ><span class="home-2">Home</span
+        ><span class="tours-packages"><a href="{{ url_for('tour') }}">Tours Packages</span
+        ><span class="tours-packages-3">Tours Packages</a></span
+        ><a href="{{ url_for('hotel') }}"><span class="hotels">Hotels</span><span class="hotels-4">Hotels</a></span
+        ><a href="{{ url_for('ar') }}"><span class="cabs">Guide</span><span class="cabs-5">Guide</a></span>
+        <div class="contact-us">
+          <span class="about">About</span><span class="nbsp"> </span
+          ><span class="about-6">us</span>
+          </div>
+        <div class="contact-us-7">
+          <span class="about-8">About</span><span class="nbsp-9"> </span
+          ><span class="about-a">us</span>
+        </div><div class="profile">
+          <div class="profile" onclick="toggleProfileModal()">
+            <img src="/static/images/user-icon.png" alt="User Profile" class="profile-icon">
+          </div>          
+        <a href="{{ url_for('sos') }}"><span class="s">S</span><span class="less-than"></a></span></div>
+        <div class="modal-overlay" id="overlay" onclick="toggleProfileModal()"></div>
+        <div class="profile-panel" id="profilePanel">
+          <button class="close-btn" onclick="toggleProfileModal()">×</button>
+          <h3>User Profile</h3>
+          <p><strong>Name:</strong> John Doe</p>
+          <p><strong>Email:</strong> johndoe@example.com</p>
+          <p><strong>Membership:</strong> Premium</p>
+        </div>
+        
+        <div class="line"></div>
+      </div>
+      <div class="flex-row-fa">
+        <div class="boy"></div>
+        <div class="group-b">
+          <div class="flex-row-d">
+            <button class="rectangle">
+              <span class="san-francisco-america">Coimbatore,Tamilnadu</span>
+            </button>
+            <div class="rectangle-c">
+              <span class="explore-now">Explore the world </span>
+              <div class="download"></div>
+            </div>
+          </div>
+          <div class="flex-row-aa">
+            <div class="line-d"></div>
+            <div class="download-e"></div>
+          </div>
+          <div class="flex-row-bb">
+            <div class="screenshot"></div>
+            <span class="planning-your-dream"
+              >Planning your dream vacation has never been easier! GUIDY is your
+              ultimate travel companion, designed to help you explore the world
+              with ease.<br
+            /></span>
+            <div class="rectangle-f"></div>
+            <div class="rectangle-10">
+              <span class="customize-with-mickey"
+                >Customize With Mikey AI
+              </span>
+            </div>
+          </div>
+          <div class="flex-row-ee">
+            <span class="innovative-tours">Innovative tours</span>
+            <div class="images"></div>
+          </div>
+          <span class="explore-with-ai-ar"
+            >Explore with AI and AR technology</span
+          >
+          <div class="flex-row-a">
+            <div class="licensed-image"></div>
+            <div class="licensed-image-11"></div>
+          </div>
+          <div class="flex-row-cee"href="hotel.html" class="booking-link">
+            <span class="custom-tours">Custom Tours ></span
+            ><span class="ar-hotel-booking" href="#">AR hotel booking ></span>
+          </div>
+          <div class="flex-row-ddd">
+            <span class="experience-tailor-made"
+              >Experience tailor-made tour designed  just for you.</span
+            ><span class="book-hotels-effortlessly"
+              >Book hotels effortlessly using AR.</span
+            >
+          </div>
+          <div class="flex-row-cfe">
+            <div class="rectangle-12"></div>
+            <div class="rectangle-13"></div>
+            <div class="rectangle-14"><div class="rectangle-15"></div></div>
+            <div class="rectangle-16"><div class="rectangle-17"></div></div>
+          </div>
+          <span class="what-we-serve">WHAT WE SERVE</span>
+          <div class="flex-row-d-18">
+            <div class="rectangle-19">
+              <div class="images-removebg-preview"></div>
+            </div>
+            <div class="rectangle-1a"><div class="download-1b"></div></div>
+            <div class="rectangle-1c">
+              <div class="images-removebg-preview-1d"></div>
+            </div>
+            <span class="what-will-you-get"
+              >What will<br />
+              you get?
+            </span>
+            <div class="images-1e"></div>
+            <span class="tour-customization">Tour customization</span
+            ><span class="best-tour-guides">Best Tour guides</span>
+          </div>
+          <div class="flex-row-dac">
+            <div class="line-1f"></div>
+            <div class="line-20"></div>
+            <span class="ai-voice-assistance-ar-views"
+              >AI Voice Assistance and AR Views be your personal tour
+              guides</span
+            ><span class="try-variety-benefits"
+              >Try a variety of benifits<br />
+              when using our services</span
+            ><span class="build-trip-ai">Build a trip in minutes with AI</span>
+          </div>
+        </div>
+        <div class="ellipse-21"></div>
+        <span class="journey-best-memories"
+          >Journey to Create the Best Memories <br />
+          <br /><br
+        /></span>
+        <div class="across-globe-explore-discover">
+          <span class="across-the-globe"> Across the Globe </span
+          ><span class="explore">Explore</span
+          ><span class="across-the-globe-22">, </span
+          ><span class="explore-23">Discover</span
+          ><span class="cherish-every-moment">, and</span>
+        </div>
+        <span class="cherish-every-moment-24">Cherish Every Moment!</span>
+        <div class="screenshot-25"></div>
+        <div class="ellipse-26"></div>
+        <span class="easy-booking">Easy Booking</span
+        ><span class="book-hotels-cabs-ar"
+          >Book hotels and cabs effortlessly through AR</span
+        >
+        <div class="ellipse-27">
+          <div class="images-jpeg"></div>
+          <span class="ai-voice-tour-guide">AI voice tour guide ></span
+          ><span class="explore-assistant"
+            >Explore with an intelligent voice assistant guiding you.</span
+          >
+          <div class="flex-row-bf">
+            <div class="rectangle-28"></div>
+            <div class="rectangle-29"><div class="rectangle-2a"></div></div>
+            <div class="star"></div>
+          </div>
+        </div>
+        <div class="google-searchbox"></div>
+        <div class="college-ppt"><div class="images-2b"></div></div>
+        <div class="ellipse-2c"></div>
+        <span class="get-started">Get Started Today!</span
+        ><span class="affordable-tourism"
+          >Affordable and Seamless tourism in world wide</span
+        ><span class="prioritized-tourists"
+          >Since our inception,we have prioritized the convennience of our
+          tourists by<br />offering affordable prices and a seeamless
+          experience<br
+        /></span>
+        <div class="download-2d"></div>
+        <span class="customer-support">24/7 customer Support</span
+        ><span class="payment-options">Flexible Payment Options</span
+        ><span class="dedicated-support">
+          24/7 Dedicated Customer<br />
+          Support.Ensuring a Massive-Free <br />
+          Travel Experience</span
+        ><span class="secure-transactions"
+          >Secure Transactions for Your Travel Needs</span
+        >
+      </div>
+      <div class="flex-row">
+        <div class="miui-gallery"></div>
+        <span class="what-they-say">WHAT THEY SAY</span
+        ><span class="customer-feedback"
+          >What Our Customer <br />Say About us?</span
+        ><span class="fantastic-trip"
+          >Fantastic trip with Guidy! Flexible payment options and helpfull
+          customer support made it hassie-free.<br />highly recommended!</span
+        >
+        <div class="download-2e"></div>
+        <span class="jesse-hamilton">Jesse Hamilton</span
+        ><button class="rectangle-2f">
+          <span class="traveller">Traveller</span>
+        </button>
+        <div class="download-30"><div class="download-31"></div></div>
+        <div class="rectangle-32">
+          <span class="subscribe-info"
+            >Subscribe To Get Information,Latest News and Other<br />
+            Interesting Offers About Trip.</span
+          ><span class="subscribe-info-33"
+            >Subscribe To Get Information,Latest News and Other<br />
+            Interesting Offers About Trip.</span
+          >
+          <div class="images-34"><div class="images-35"></div></div>
+          <div class="rectangle-36">
+            <button class="rectangle-37">
+              <span class="subscribe">Subscribe</span>
+            </button>
+            <div class="reshot-icon-email">
+              <div class="vector"></div>
+              <div class="reshot-icon-email-38">
+                <div class="vector-39"></div>
+              </div>
+            </div>
+            <span class="your-email"></span
+            ><span class="your-email-3a">Your Email </span>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle-3b">
+        <div class="add-a-heading"></div>
+        <span class="company">Company</span><span class="contact">Contact</span
+        ><span class="more">More</span
+        ><span class="airlinefees">Airlinefees</span
+        ><span class="help-faq">Help/FAQ</span
+        ><span class="about-3c">About</span>
+        <div class="screenshot-3d"></div>
+        <span class="careers">Careers</span><span class="press">Press</span
+        ><span class="airline">Airline</span
+        ><span class="low-fare-tips">Low fare tips</span
+        ><span class="affilates">Affilates</span
+        ><span class="mobile">Mobile</span>
+      </div>
+      <div class="dot-bg"></div>
+      <div class="dot-bg-3e"></div>
+      <div class="dot-bg-3f"></div>
+      <div class="dot-bg-40"></div>
+      <div class="dot-bg-41"></div>
+    </div>
+    <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.in/widget?wc=siq2516c7e163fd8e0cfa6a96864214fe4e0787e1308a8cc18fac17fc374f596714" defer>
+     
+    function toggleProfileModal() {
+    const panel = document.getElementById('profilePanel');
+    const overlay = document.getElementById('overlay');
+
+    if (panel.style.right === '-300px') {
+      panel.style.right = '0px'; // Slide in
+      overlay.style.display = 'block';
+    } else {
+      panel.style.right = '-300px'; // Slide out
+      overlay.style.display = 'none';
+    }
+  }
+    </script>
+  </body>
+</html>
